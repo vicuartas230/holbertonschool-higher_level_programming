@@ -9,22 +9,16 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *tmp = NULL, *arr[BUFSIZ];
-	int i = 0, j = 0;
+	listint_t *tmp = NULL, *tmp2 = NULL;
 
 	tmp = list;
-	while (tmp)
+	tmp2 = list;
+	while (tmp && tmp2)
 	{
-		arr[j] = tmp;
-		i = j - 1;
-		while (i >= 0)
-		{
-			if (arr[i] == arr[j])
-				return (1);
-			i--;
-		}
 		tmp = tmp->next;
-		j++;
+		tmp2 = tmp2->next->next;
+		if (tmp == tmp2)
+			return (1);
 	}
 	return (0);
 }

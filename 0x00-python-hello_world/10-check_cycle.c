@@ -13,7 +13,7 @@ int check_cycle(listint_t *list)
 
 	tmp = list;
 	tmp2 = list;
-	while (tmp && tmp2)
+	while (tmp && tmp2 && tmp2->next)
 	{
 		tmp = tmp->next;
 		tmp2 = tmp2->next->next;

@@ -41,10 +41,12 @@ class Square:
         self.__position = value
 
     def area(self):
+        """ Function that returns the area of a square """
         x = self.__size
         return x * x
 
     def my_print(self):
+        """ Function that prints a square of characters # """
         length = self.__size
         if not length:
             print('')

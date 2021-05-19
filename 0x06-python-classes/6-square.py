@@ -49,11 +49,12 @@ class Square:
         length = self.__size
         if not length:
             print('')
-        for m in range(self.__position[1]):
-            print('')
-        for i in range(length):
-            for k in range(self.__position[0]):
-                print(' ', end='')
-            for j in range(length):
-                print('#', end='')
-            print('')
+        else:
+            for m in range(self.__position[1]):
+                print('')
+            for i in range(length):
+                for k in range(self.__position[0]):
+                    print(' ', end='')
+                for j in range(length):
+                    print('#', end='')
+                print('')

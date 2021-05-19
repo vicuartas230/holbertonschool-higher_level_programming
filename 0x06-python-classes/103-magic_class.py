@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Module to use constant pi """
 import math
 """ This program defines a class MagicClass """
 

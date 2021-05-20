@@ -42,6 +42,8 @@ class Rectangle:
 
     def __str__(self):
         rectangle = ''
+        if not self.__height or not self.__width:
+            return rectangle
         for row in range(self.__height):
             for column in range(self.__width):
                 rectangle += '#'

@@ -1,5 +1,13 @@
 #!/usr/bin/python3
+""" This program is used to test all
+    especial cases of a division of
+    a matrix for a number div """
+
+
 def matrix_divided(matrix, div):
+    """ This function divides all elements of a matrix
+        matrix is the list of lists
+        div is the number to divide each element of matrix """
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
     if div == 0:

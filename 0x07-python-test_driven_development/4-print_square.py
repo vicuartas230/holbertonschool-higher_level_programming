@@ -1,5 +1,12 @@
 #!/usr/bin/python3
+""" This program is used to test all posible special cases
+    in the function print_square """
+
+
 def print_square(size):
+    """ This function prints a square with the character #
+        size is the lenght of width
+        and the height """
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
     if size < 0:

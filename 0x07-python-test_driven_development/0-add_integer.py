@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-""" This function adds two integers """
+""" This program is used to test all posible
+    special cases of the function add_integter """
 
 
 def add_integer(a, b=98):
-    """ This function returns the add of two integers """
+    """ This function returns the add of two integers
+        a is the first number to add
+        b is the second number to add """
     if type(a) is not [int, float]:
         raise TypeError("a must be an integer")
     if type(b) is not [int, float]:

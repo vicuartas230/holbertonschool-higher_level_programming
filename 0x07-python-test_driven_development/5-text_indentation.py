@@ -1,5 +1,13 @@
 #!/usr/bin/python3
+""" This program is used to test
+    all posible special cases
+    in function text_dentation """
+
+
 def text_indentation(text):
+    """ This function prints a text with 2 new lines
+        after each of these characters: '.', '?' and ':'
+        text is a string """
     if type(text) is not str:
         raise TypeError("text must be a string")
     separator = '.:?'

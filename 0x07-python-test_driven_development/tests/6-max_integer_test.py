@@ -1,7 +1,14 @@
+#!/usr/bin/python3
+""" This program is used to test all
+    posible special cases for the function
+    max_integer """
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
+
 class TestMaxInteger(unittest.TestCase):
+    """ Class to test the function max_integer
+        with the module unittest """
     def test_max_integer(self):
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
         with self.assertRaises(TypeError):

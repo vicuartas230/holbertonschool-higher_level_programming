@@ -17,9 +17,12 @@ def text_indentation(text):
         try:
             for char in separator:
                 if text[letter] == char:
-                    comp = 0
+                    if text[letter] != ' ':
+                        comp = 1
+                    else:
+                        comp = 0
                     print("{}{}".format(text[letter], '\n'))
-                    letter += 1
+                    letter += 2
                     break
             if text[letter + 1] and text[letter + 1] != ' \
 ' and text[letter] == ' ' and not comp:

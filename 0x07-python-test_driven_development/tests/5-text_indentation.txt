@@ -1,2 +1,47 @@
->>> text_indentation = __import__('5-text_indentation').text_indentation
->>> 
+The text_indentation module
+======================
+
+Using text_indentation
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+text_indentation from the 5-text_indentation module:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Check for requeriments
+
+    Test if file has shebang
+        >>> import os
+        >>> os.popen("head -1 5-text_indentation.py").read()
+        '#!/usr/bin/python3\n'
+    
+    Test if the file has PEP8 style
+        >>> import os
+        >>> os.popen("pep8 5-text_indentation.py").read()
+        ''
+
+    Test documentation in the file
+        >>> doc = __import__( "5-text_indentation").__doc__
+        >>> len(doc) > 0
+        True
+
+    Test documentation in function
+        >>> fun = __import__( "5-text_indentation").text_indentation.__doc__
+        >>> len(fun) > 0
+        True
+
+Now use it:
+
+    >>> text_indentation('Holberton School')
+    Holberton School
+
+    >>> text_indentation('Hello. World')
+    Hello.
+    <BLANKLINE>
+    World
+
+    >>> text_indentation(684561)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string

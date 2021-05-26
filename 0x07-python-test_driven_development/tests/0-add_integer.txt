@@ -1,17 +1,68 @@
->>> add_integer = __import__('0-add_integer').add_integer
->>> add_integer(1, 2)
-3
->>> add_integer(100, -2)
-98
->>> add_integer(2)
-100
->>> add_integer(100.3, -2)
-98
->>> add_integer(4, "School")
-Traceback (most recent call last):
-...
-TypeError: b must be an integer
->>> add_integer(None)
-Traceback (most recent call last):
-...
-TypeError: a must be an integer
+The add_integer module
+======================
+
+Using add_integer
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+add_integer from the 0-add_integer module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Check for requeriments
+
+    Test if file has shebang
+        >>> import os
+        >>> os.popen("head -1 0-add_integer.py").read()
+        '#!/usr/bin/python3\n'
+
+    Test if the file has PEP8 style
+        >>> import os
+        >>> os.popen("pep8 0-add_integer.py").read()
+        ''
+
+    Test documentation in the file
+        >>> doc = __import__("0-add_integer").__doc__
+        >>> len(doc) > 0
+        True
+
+    Test documentation in function
+        >>> fun = __import__("0-add_integer").add_integer.__doc__
+        >>> len(fun) > 0
+        True
+
+Now use it:
+
+    Normal test
+        >>> add_integer(1, 2)
+        3
+
+    Test with b negative
+        >>> add_integer(100, -2)
+        98
+
+    Test with one number
+        >>> add_integer(2)
+        100
+
+    Test with a float number
+        >>> add_integer(100.3, -2)
+        98
+
+    Test with b like string
+        >>> add_integer(4, "School")
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
+    Test when argument is none
+        >>> add_integer(None)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+    Test with booleans
+        >>> add_integer(True, 1)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer

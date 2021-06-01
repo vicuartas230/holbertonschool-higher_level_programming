@@ -1,0 +1,53 @@
+The my_list module
+======================
+
+Using my_list
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+my_list from the 1-my_list module:
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Check for requeriments
+
+    Test if file has shebang
+        >>> import os
+        >>> os.popen("head -1 1-my_list.py").read()
+        '#!/usr/bin/python3\n'
+
+    Test if the file has PEP8 style
+        >>> import os
+        >>> os.popen("pep8 1-my_list.py").read()
+        ''
+
+    Test documentation in the file
+        >>> doc = __import__("1-my_list").__doc__
+        >>> len(doc) > 0
+        True
+
+    Test documentation in function
+        >>> fun = __import__("1-my_list").MyList.__doc__
+        >>> len(fun) > 0
+        True
+
+Now use it:
+    >>> x = MyList()
+    >>> x.append(1)
+    >>> print(x)
+    [1]
+
+    >>> a = MyList()
+    >>> print(a)
+    []
+
+    >>> b = MyList()
+    >>> b.append(200)
+    >>> b.append(100)
+    >>> b.append(100)
+    >>> print(b)
+    [200, 100, 100]
+    >>> b.print_sorted()
+    [100, 100, 200]
+    >>> print(b)
+    [200, 100, 100]

@@ -1,0 +1,55 @@
+The base_geometry module
+======================
+
+Using base_geometry
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+base_geometry from the 7-base_geometry module:
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Check for requeriments
+
+    Test if file has shebang
+        >>> import os
+        >>> os.popen("head -1 7-base_geometry.py").read()
+        '#!/usr/bin/python3\n'
+
+    Test if the file has PEP8 style
+        >>> import os
+        >>> os.popen("pep8 7-base_geometry.py").read()
+        ''
+
+    Test documentation in the file
+        >>> doc = __import__("7-base_geometry").__doc__
+        >>> len(doc) > 0
+        True
+
+    Test documentation in function
+        >>> fun = __import__("7-base_geometry").BaseGeometry.__doc__
+        >>> len(fun) > 0
+        True
+
+Now use it:
+
+    >>> a = BaseGeometry()
+    >>> a.integer_validator("weigth", 22.5)
+    Traceback (most recent call last):
+      ...
+    TypeError: weigth must be an integer
+
+    >>> b = BaseGeometry()
+    >>> b.integer_validator("Year", 2021)
+
+    >>> c = BaseGeometry()
+    >>> c.integer_validator("First letter", "K")
+    Traceback (most recent call last):
+      ...
+    TypeError: First letter must be an integer
+
+    >>> d = BaseGeometry()
+    >>> d.integer_validator("Temperature", -10)
+    Traceback (most recent call last):
+      ...
+    ValueError: Temperature must be greater than 0

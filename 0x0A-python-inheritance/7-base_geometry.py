@@ -1,5 +1,10 @@
 #!/usr/bin/python3
+""" This program defines a class BaseGeometry """
+
+
 class BaseGeometry:
+    """ This class defines the attributes to handle the geometry
+        in some subclasses """
     def area(self):
         raise Exception("area() is not implemented")
 

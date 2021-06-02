@@ -1,8 +1,12 @@
 #!/usr/bin/python3
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
+""" This program defines a class Rectangle """
 
 
 class Rectangle(BaseGeometry):
+    """ This class defines a subclass of the class
+        BaseGeometry to use the width and height arguments
+        to create a area method """
     def __init__(self, width, height):
         super().integer_validator("width", width)
         super().integer_validator("height", height)

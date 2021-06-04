@@ -11,6 +11,6 @@ def pascal_triangle(n):
         item = 1
         for column in range(1, (row + 1)):
             elemts.append(item)
-            item = int(item * (row - column) / column)
+            item = round(item * (row - column) / column)
         lines.append(elemts)
     return lines

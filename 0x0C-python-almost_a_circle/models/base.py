@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ This program defines a class Base """
 import json
+from os import path
 
 
 class Base:
@@ -25,10 +26,10 @@ class Base:
     def save_to_file(cls, list_objs):
         list_dicts = []
         if not list_objs:
-            with open('Rectangle.json', 'w') as fd:
+            with open("{}.json".format(cls.__name__), 'w') as fd:
                 json.dump(list_dicts, fd)
         else:
-            with open('Rectangle.json', 'w') as fd:
+            with open("{}.json".format(cls.__name__), 'w') as fd:
                 for obj in list_objs:
                     list_dicts.append(obj.__dict__)
                 json.dump(Base.to_json_string(list_dicts), fd)
@@ -40,3 +41,9 @@ class Base:
             return list_json
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        dummy = cls(10, 10)
+        dummy.update(**dictionary)
+        return dummy

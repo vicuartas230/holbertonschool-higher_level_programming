@@ -47,3 +47,15 @@ class Base:
         dummy = cls(10, 10)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        list_inst = []
+        if path.exists("{}.json".format(cls.__name__)):
+            with open("{}.json".format(cls.__name__), 'r') as fd:
+                list_dicts = cls.from_json_string(json.load(fd))
+                for dicts in list_dicts:
+                    list_inst.append(cls.create(**dicts))
+            return list_inst
+        else:
+            return list_inst

@@ -32,3 +32,11 @@ class Base:
                 for obj in list_objs:
                     list_dicts.append(obj.__dict__)
                 json.dump(Base.to_json_string(list_dicts), fd)
+
+    @staticmethod
+    def from_json_string(json_string):
+        list_json = []
+        if not json_string:
+            return list_json
+        else:
+            return json.loads(json_string)

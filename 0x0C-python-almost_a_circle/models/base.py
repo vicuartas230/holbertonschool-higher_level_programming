@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" This program defines a class Base """
+""" This script defines a class Base """
 import json
 from os import path
 
@@ -17,6 +17,8 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """ This function returns the JSON string representation
+            of list_dictionaries """
         if not list_dictionaries:
             return '[]'
         else:
@@ -24,6 +26,8 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """ This method writes the JSON string representation
+            of list_objs to a file """
         list_dicts = []
         if not list_objs:
             with open("{}.json".format(cls.__name__), 'w') as fd:
@@ -36,6 +40,8 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """ This method returns the list of the JSON string
+            representation json_string: """
         list_json = []
         if not json_string:
             return list_json
@@ -44,12 +50,15 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """ This method returns an instance with all
+            attributes already set """
         dummy = cls(10, 10)
         dummy.update(**dictionary)
         return dummy
 
     @classmethod
     def load_from_file(cls):
+        """ This method returns a list of instances """
         list_inst = []
         if path.exists("{}.json".format(cls.__name__)):
             with open("{}.json".format(cls.__name__), 'r') as fd:

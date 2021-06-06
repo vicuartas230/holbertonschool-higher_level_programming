@@ -78,19 +78,26 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
+        """ This method returns the area of a rectangle """
         return self.__height * self.__width
 
     def display(self):
+        """ This method prints in stdout the Rectangle
+            instance with the character '#' """
         print(self.__y * '\n', end='')
         for row in range(self.__height):
             print(self.__x * ' ' + self.__width * '#')
 
     def __str__(self):
+        """ This method returns a representation
+            of class values in a given format """
         return "[{}] ({}) {}/{} - {}/{}\
 ".format(__class__.__name__, self.id, self.__x,
             self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
+        """ This method assigns an argument to each attribute or assigns
+            a key/value argument to attributes if args doesn't exist """
         if args:
             attrs = ['id', 'width', 'height', 'x', 'y']
             for i in range(len(args)):
@@ -100,6 +107,8 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """ This method returns the dictionary representation
+            of a Rectangle """
         keys = ['id', 'width', 'height', 'x', 'y']
         dicc = {}
         for i in range(len(keys)):

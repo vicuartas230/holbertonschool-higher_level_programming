@@ -22,12 +22,32 @@ class TestBaseClass(unittest.TestCase):
     def test_doc_class(self):
         self.assertTrue(len(Base.__doc__) > 0)
 
-    def test_doc_functions(self):
+    def test_doc_function_to_json_string(self):
         self.assertTrue(len(Base.to_json_string.__doc__) > 0)
+        
+    def test_doc_function_save_to_file(self):
         self.assertTrue(len(Base.save_to_file.__doc__) > 0)
+
+    def test_doc_function_from_json_string(self):
         self.assertTrue(len(Base.from_json_string.__doc__) > 0)
+
+    def test_doc_function_create(self):
         self.assertTrue(len(Base.create.__doc__) > 0)
+
+    def test_doc_function_load_from_file(self):
         self.assertTrue(len(Base.load_from_file.__doc__) > 0)
+
+    def test_to_json_string_None(self):
+        a = Base.to_json_string(None)
+        self.assertTrue(len(a) == 2)
+
+    def test_to_json_string(self):
+        dicts = []
+        self.assertEqual(type(Base.to_json_string(dicts)), str)
+
+    def test_save_to_file_none(self):
+        test = Base.save_to_file(None)
+        self.assertTrue(len(test) == 0)
 
 if __name__ == '__name__':
     unittest.main()

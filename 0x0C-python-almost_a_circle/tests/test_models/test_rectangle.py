@@ -22,12 +22,42 @@ class TestBaseClass(unittest.TestCase):
     def test_doc_class(self):
         self.assertTrue(len(Rectangle.__doc__) > 0)
 
-    def test_doc_functions(self):
+    def test_doc_function_area(self):
         self.assertTrue(len(Rectangle.area.__doc__) > 0)
+
+    def test_doc_function_display(self):
         self.assertTrue(len(Rectangle.display.__doc__) > 0)
+
+    def test_doc_function_str(self):
         self.assertTrue(len(Rectangle.__str__.__doc__) > 0)
+
+    def test_doc_function_update(self):
         self.assertTrue(len(Rectangle.update.__doc__) > 0)
+
+    def test_doc_function_to_dictionary(self):
         self.assertTrue(len(Rectangle.to_dictionary.__doc__) > 0)
+
+    def test_exception_type(self):
+        with self.assertRaises(TypeError):
+            Rectangle('Holberton', 10)
+
+    def test_exception_value(self):
+        with self.assertRaises(ValueError):
+            Rectangle(16, 22, -6, 4)
+
+    def test_exception_type_error(self):
+        with self.assertRaises(TypeError):
+            a = Rectangle(100, 100)
+            a.y = []
+
+    def test_area_method(self):
+        a = Rectangle(20, 30)
+        self.assertEqual(a.area(), 600)
+
+    def test_display_method(self):
+        a = print(Rectangle(2, 5, 3, 1, 5412))
+        b = '[Rectangle] (5412) 3/1 - 2/5'
+        self.assertTrue(a == b)
 
 if __name__ == '__name__':
     unittest.main()

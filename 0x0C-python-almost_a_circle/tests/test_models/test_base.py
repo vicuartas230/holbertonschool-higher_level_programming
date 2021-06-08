@@ -45,9 +45,5 @@ class TestBaseClass(unittest.TestCase):
         dicts = []
         self.assertEqual(type(Base.to_json_string(dicts)), str)
 
-    def test_save_to_file_none(self):
-        test = Base.save_to_file(None)
-        self.assertTrue(len(test) == 0)
-
 if __name__ == '__name__':
     unittest.main()

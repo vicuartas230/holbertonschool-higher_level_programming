@@ -5,6 +5,7 @@ import models.base
 import unittest
 import os
 
+
 class TestBaseClass(unittest.TestCase):
     """ Class to test the class Base with the module unittest """
     def test_shebang(self):
@@ -24,7 +25,7 @@ class TestBaseClass(unittest.TestCase):
 
     def test_doc_function_to_json_string(self):
         self.assertTrue(len(Base.to_json_string.__doc__) > 0)
-        
+
     def test_doc_function_save_to_file(self):
         self.assertTrue(len(Base.save_to_file.__doc__) > 0)
 

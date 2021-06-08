@@ -5,6 +5,7 @@ import models.rectangle
 import unittest
 import os
 
+
 class TestBaseClass(unittest.TestCase):
     """ Class to test the class Rectangle with the module unittest """
     def test_shebang(self):
@@ -53,11 +54,6 @@ class TestBaseClass(unittest.TestCase):
     def test_area_method(self):
         a = Rectangle(20, 30)
         self.assertEqual(a.area(), 600)
-
-    def test_display_method(self):
-        a = print(Rectangle(2, 5, 3, 1, 5412))
-        b = '[Rectangle] (5412) 3/1 - 2/5'
-        self.assertTrue(a == b)
 
 if __name__ == '__name__':
     unittest.main()

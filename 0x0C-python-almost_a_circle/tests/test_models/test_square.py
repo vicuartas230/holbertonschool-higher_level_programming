@@ -5,6 +5,7 @@ import models.square
 import unittest
 import os
 
+
 class TestBaseClass(unittest.TestCase):
     """ Class to test the class Square with the module unittest """
     def test_shebang(self):

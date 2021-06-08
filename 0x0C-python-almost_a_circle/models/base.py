@@ -36,7 +36,8 @@ class Base:
             with open("{}.json".format(cls.__name__), 'w') as fd:
                 for obj in list_objs:
                     list_dicts.append(obj.to_dictionary())
-                json.dump(Base.to_json_string(list_dicts), fd)
+                Base.to_json_string(list_dicts)
+                json.dump(list_dicts, fd)
 
     @staticmethod
     def from_json_string(json_string):

@@ -52,7 +52,7 @@ class TestBaseClass(unittest.TestCase):
 
     def test_square_update(self):
         obj = Square(2)
-        self.assertEqual(obj.__str__(), '[Square] (16) 0/0 - 2')
+        self.assertEqual(obj.__str__(), '[Square] (3) 0/0 - 2')
         obj = Square(4)
 
     def test_square_to_dictionary(self):

@@ -8,10 +8,12 @@ if (args.length === 2 || args.length === 3) {
   const arr = [];
   let j = 0;
   while (i < args.length) {
-    arr[j] = args[i];
+    arr[j] = parseInt(args[i]);
     i++;
     j++;
   }
-  arr.sort();
+  arr.sort(function (a, b) {
+    return a - b;
+  });
   console.log(arr[arr.length - 2]);
 }

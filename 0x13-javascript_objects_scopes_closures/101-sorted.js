@@ -3,6 +3,9 @@ const dict = require('./101-data').dict;
 const newDict = {};
 let occurences = [];
 const a = Object.entries(dict);
+if (!a.length) {
+  process.exit();
+}
 let b = Object.keys(newDict);
 let search = a[0][1];
 let i = 0;

@@ -1,11 +1,12 @@
 #!/usr/bin/node
 const dict = require('./101-data').dict;
-const newDict = {};
-let occurences = [];
 const a = Object.entries(dict);
+const newDict = {};
 if (!a.length) {
+	console.log(newDict);
   process.exit();
 }
+let occurences = [];
 let b = Object.keys(newDict);
 let search = a[0][1];
 let i = 0;

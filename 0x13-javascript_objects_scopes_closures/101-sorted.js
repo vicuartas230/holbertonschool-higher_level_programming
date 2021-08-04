@@ -3,7 +3,7 @@ const dict = require('./101-data').dict;
 const a = Object.entries(dict);
 const newDict = {};
 if (!a.length) {
-	console.log(newDict);
+  console.log(newDict);
   process.exit();
 }
 let occurences = [];

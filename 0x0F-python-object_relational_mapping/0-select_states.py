@@ -5,13 +5,9 @@ from sys import argv
 
 
 if __name__ == '__main__':
-    db = MySQLdb.connect("localhost", argv[1], "Root#10.", argv[3])
+    db = MySQLdb.connect("localhost", argv[1], argv[2], argv[3])
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
-    a = cursor.fetchone()
-    # while a:
-    #     print(a)
-    #     a = cursor.fetchone()
-    for state in a:
+    for state in cursor.fetchall():
         print(state)
     db.close()

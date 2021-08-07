@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """ Once again, this script takes in arguments and displays all values
     in the states table of hbtn_0e_0_usa where name matches the argument. But
     this time, this script writes one that is safe from MySQL injections! """

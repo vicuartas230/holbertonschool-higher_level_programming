@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """ This script lists all cities from the database hbtn_0e_4_usa. """
 import MySQLdb
 from sys import argv

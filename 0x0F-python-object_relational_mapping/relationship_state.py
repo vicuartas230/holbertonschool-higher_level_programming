@@ -13,7 +13,4 @@ class State(Base):
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True, unique=True, nullable=False)
     name = Column(String(128), nullable=False)
-    cities = relationship("City", cascade="all, delete", back_populates="state")
-
-    def __init__(self, name):
-        self.name = name
+    cities = relationship("City", cascade="all, delete", back_ref="state")

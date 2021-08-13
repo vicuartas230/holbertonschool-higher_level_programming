@@ -14,5 +14,7 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
     consult = session.query(State).all()
-    for obj in consult:
-        print(obj.cities)
+    for state in consult:
+        print("{}: {}".format(state.id, state.name))
+        for city in state.cities:
+                print("\t{}: {}".format(city.id, city.name))

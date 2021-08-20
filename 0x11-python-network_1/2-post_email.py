@@ -12,7 +12,7 @@ if __name__ == '__main__':
         'email': argv[2]
     }
     data = urlencode(dictionary)
-    data = data.encode('utf-8')
+    data = data.encode('ascii')
     req = Request(argv[1], data)
     with urlopen(req) as response:
-        print(response.read())
+        print(response.read().decode('utf-8'))

@@ -8,10 +8,7 @@ from urllib.parse import urlencode
 
 
 if __name__ == '__main__':
-    dictionary = {
-        'email': argv[2]
-    }
-    data = urlencode(dictionary)
+    data = urlencode({'email': argv[2]})
     data = data.encode('ascii')
     req = Request(argv[1], data)
     with urlopen(req) as response:

@@ -12,7 +12,7 @@ if __name__ == '__main__':
         dicc = {'q': argv[1]}
     req = post('http://0.0.0.0:5000/search_user', data=dicc)
     if len(req.json()) != 0 and type(req.json()) is dict:
-        print("[{}] {}".format(req.json()['id'], req.json()['name']))
+        print("[{}] {}".format(req.json().get('id'), req.json().get('name')))
     elif type(req.json()) is not dict:
         print("Not a valid JSON")
     else:

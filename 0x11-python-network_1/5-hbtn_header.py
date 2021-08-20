@@ -6,5 +6,7 @@ from sys import argv
 
 
 if __name__ == '__main__':
+    if len(argv) < 2:
+        exit()
     req = get(argv[1])
     print(req.headers['X-Request-Id'])

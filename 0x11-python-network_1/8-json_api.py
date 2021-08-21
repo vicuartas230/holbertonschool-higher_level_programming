@@ -12,8 +12,8 @@ if __name__ == '__main__':
         dicc = {'q': argv[1]}
     req = post('http://0.0.0.0:5000/search_user', data=dicc)
     try:
-        if len(req.json()) != 0 and type(req.json()) is dict:
-            print("[{}] {}".format(req.json().['id'], req.json()['name']))
+        if len(req.json()) != 0:
+            print("[{}] {}".format(req.json()['id'], req.json()['name']))
         else:
             print("No result")
     except:

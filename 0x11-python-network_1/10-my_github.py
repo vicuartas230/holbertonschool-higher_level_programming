@@ -12,4 +12,4 @@ if __name__ == '__main__':
                 auth=HTTPBasicAuth(argv[1], argv[2]))
         print(req.json()['id'])
     except:
-        print('', end='')
+        print('None')

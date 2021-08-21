@@ -7,6 +7,9 @@ from requests.auth import HTTPBasicAuth
 
 
 if __name__ == '__main__':
-    req = get('https://api.github.com/user', verify=False,
-              auth=HTTPBasicAuth(argv[1], argv[2]))
-    print(req.json()['id'])
+    try:
+        req = get('https://api.github.com/user',
+                auth=HTTPBasicAuth(argv[1], argv[2]))
+        print(req.json()['id'])
+    except:
+        print('', end='')

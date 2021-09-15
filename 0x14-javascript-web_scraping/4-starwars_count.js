@@ -7,8 +7,8 @@ request(argv[2], function (error, response, body) {
     console.log(error);
   }
   const listFilms = JSON.parse(body).results;
-  const cont = listFilms.filter(function (item) {
-    return item.characters.includes('https://swapi-api.hbtn.io/api/people/18/');
-  }).length;
-  console.log(cont);
+  const film = listFilms.map(item => item.characters);
+  const chars = film.map(x => x.includes('https://swapi-api.hbtn.io/api/people/18/'));
+  const done = chars.filter(element => element).length;
+  console.log(done);
 });
